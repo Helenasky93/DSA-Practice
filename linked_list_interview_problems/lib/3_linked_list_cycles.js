@@ -61,7 +61,28 @@
 // -----------
 function hasCycle(linkedList) {
   // TODO: Implement the hasCycle function!
+  let nodes = new Set();
+  let temp = linkedList.head;
+  while(temp) {
+    // console.log(temp.value, nodes);
+    if(nodes.has(temp)) {
+      return true
+    }
+    nodes.add(temp);
+    temp = temp.next
+  }
+  return false;
+  // let slow = linkedList.head;
+  // let fast = linkedList.head;
+  // let pause = true;
 
+  // while (fast = fast.next) {
+  //   if (fast === slow) return true;
+  //   slow = pause ? slow : slow.next;
+  //   pause = !pause;
+  // }
+
+  // return false;
 }
 
 
