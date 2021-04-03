@@ -40,19 +40,22 @@ class Queue {
             this.front = node;
             this.back = node;
         } else {
+            if(this.length === 1) {
+                this.front.next = node
+            }
             let oldBack = this.back;
             this.back = node;
             this.back.next = oldBack;
-            let temp = this.back;
-            // console.log("temp.next", temp);
-            while (temp) {
-                if (temp.next === this.front) {
-                    this.front.next = temp
-                    // this.front.next = null;
-                    break
-                }
-                temp = temp.next
-            }
+            // let temp = this.back;
+            // // console.log("temp.next", temp);
+            // while (temp) {
+            //     if (temp.next === this.front) {
+            //         this.front.next = temp
+            //         // this.front.next = null;
+            //         break
+            //     }
+            //     temp = temp.next
+            // }
 
         }
         this.length++;
